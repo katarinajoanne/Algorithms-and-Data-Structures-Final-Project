@@ -60,7 +60,7 @@ public class Graph {
             System.out.println("no route");
         }
         else{
-            System.out.println("Shortest path from" + location1 + " to " + location2 + " with dijkstra is " + distance[dst] + " km");
+            System.out.println("Shortest path from " + location1 + " to " + location2 + " with dijkstra is " + distance[dst] + " km");
         }
     }
 
