@@ -30,7 +30,7 @@ public class Graph {
         }
     }
 
-    public void dijkstra(int src, int dst){
+    public void dijkstra(int src, int dst, String location1, String location2){
         int distance[] = new int[numVertex];
         boolean[] fixed = new boolean[numVertex];
         int[] parent = new int[numVertex];
@@ -60,7 +60,7 @@ public class Graph {
             System.out.println("no route");
         }
         else{
-            System.out.println("Shortest path from Tangerang to Surabaya with dijkstra is " + distance[dst] + " km");
+            System.out.println("Shortest path from" + location1 + " to " + location2 + " with dijkstra is " + distance[dst] + " km");
         }
     }
 

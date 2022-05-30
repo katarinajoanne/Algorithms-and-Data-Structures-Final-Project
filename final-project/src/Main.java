@@ -1,27 +1,48 @@
+import java.util.Scanner;
+
 public class Main {
+
     public static void main(String[] args) {
-        int numVertex = 8;
-        Graph map = new Graph(numVertex);
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.print("Enter location 1: ");
+            String location1 = sc.nextLine();
 
-        map.addEdge(0, 1, 28);
+            System.out.print("Enter location 2: ");
+            String location2 = sc.nextLine();
 
-        map.addEdge(1, 2, 60);
-        map.addEdge(1, 3, 150);
+            System.out.print("How many stops would you like to have? ");
+            int numVertex = sc.nextInt();
 
-        map.addEdge(2, 3, 126);
+            boolean condition = true;
+            int edge1;
+            int edge2;
+            int stops = 1;
 
-        map.addEdge(3, 4, 130);
+            Graph map = new Graph(numVertex);
+   
+            while (condition == true) {
+                try {
+                    System.out.print("Enter distance and stops (stop " +  stops + ", stop " + (stops+1) + ", distance), (n if no more stops)");
+                    edge1 = (sc.nextInt()-1);
+                    edge2 = (sc.nextInt()-1);
+                    int distance = sc.nextInt();
+                
+                    map.addEdge(edge1, edge2, distance);
+                    stops++;
+                    
+                } catch (Exception e) {
+                    condition = false;
+                }
+            }
 
-        map.addEdge(4, 5, 229);
-        map.addEdge(4, 6, 313);
+            // System.out.print("Enter distance from location " + location + " to location " + (location + 1) + ": ");
+            // int distance =  sc.nextInt();
+            // System.out.println(distance);
 
-        map.addEdge(5, 6, 133);
-        map.addEdge(5, 7, 352);
+            map.displayGraph();
 
-        map.addEdge(6, 7,328);
-
-        map.displayGraph();
-
-        map.dijkstra(0, 7);
+            map.dijkstra(0, numVertex-1, location1, location2);
+        }
     }
 }
+
