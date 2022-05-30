@@ -13,7 +13,16 @@ public class Graph {
     }
 
     public void displayGraph() {
+        // To make graph more readable
+        System.out.print(" ");
+        for (int i = 0; i < 8; i++) {
+            System.out.printf("%5d", i);
+        }
+
+        System.out.println(" ");
+
         for (int i = 0; i < numVertex; i++) {
+            System.out.print(i);
             for (int j = 0; j < numVertex; j++) {
                 System.out.printf("%5d", adjacencyMatrix[i][j]);
             }
