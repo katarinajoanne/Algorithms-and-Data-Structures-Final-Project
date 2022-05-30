@@ -15,7 +15,7 @@ public class Graph {
     public void displayGraph() {
         // To make graph more readable
         System.out.print(" ");
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < numVertex; i++) {
             System.out.printf("%5d", i);
         }
 
