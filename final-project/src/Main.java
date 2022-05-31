@@ -35,10 +35,6 @@ public class Main {
                 }
             }
 
-            // System.out.print("Enter distance from location " + location + " to location " + (location + 1) + ": ");
-            // int distance =  sc.nextInt();
-            // System.out.println(distance);
-
             map.displayGraph();
 
             map.dijkstra(0, numVertex-1, location1, location2);
